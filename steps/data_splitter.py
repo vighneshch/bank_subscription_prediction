@@ -1,15 +1,16 @@
 # Loading the libraries
 import pandas as pd
 from zenml import step
+from typing import Tuple
 from sklearn.model_selection import train_test_split
 
 @step
-def data_splitter(df:pd.DataFrame) -> pd.DataFrame:
+def data_splitter(df:pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
 
     """
     Splits the data into train and test dataset
     
-    Parameters:
+    Parameters:cls
     df : A pandas dataframe
 
     """
